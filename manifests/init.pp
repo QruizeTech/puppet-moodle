@@ -94,10 +94,10 @@ class moodle (
     }
 
     # Download and install MediaWiki from a tarball
-    exec { "get-moodle":
-      cwd     => $web_dir,
-      command => "/usr/bin/wget ${tarball_url}",
-      creates => "${web_dir}/${tarball_name}",
+    #exec { "get-moodle":
+     # cwd     => $web_dir,
+     # command => "/usr/bin/wget ${tarball_url}",
+     # creates => "${web_dir}/${tarball_name}",
     #      subscribe => File['moodle_conf_dir'],
     }
 
@@ -105,7 +105,7 @@ class moodle (
       cwd       => $web_dir,
       command   => "/bin/tar -xvzf ${tarball_name}",
       creates   => $moodle_install_path,
-      subscribe => Exec['get-moodle'],
+      #subscribe => Exec['get-moodle'],
     }
 
     # Moodle files have to be owned by the webserver
