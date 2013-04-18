@@ -24,10 +24,6 @@ class moodle::params {
   $conf_dir           = '/etc/mediawiki'
   $apache_daemon      = '/usr/sbin/apache2'
   $use_package        = false
-  $db_host            = ''
-  $db_name            = ''
-  $db_user            = ''
-  $db_password        = ''
   #$site_url           = ''
   $site_url           = 'localhost/moodle'
   $admin_user         = 'admin'
