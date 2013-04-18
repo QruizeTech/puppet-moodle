@@ -23,10 +23,10 @@ The usage is:
 	# comes the proper Moodel class
 			class { 'moodle':
 			  tarball_url => 'http://sourceforge.net/projects/moodle/files/Moodle/stable23/moodle-2.3.3.tgz',
-			  $db_host => 'localhost',
-			  $db_name => 'moodle'
-			  $db_user => 'moodle'
-			  $db_password => 'moodle'
+			  db_host => 'localhost',
+			  db_name => 'moodle'
+			  db_user => 'moodle'
+			  db_password => 'moodle'
 			}
 
 The code is still under development, and in a pre-alfa stage, but should manage to install a working moodle installation.
