@@ -21,15 +21,15 @@
 #
 class moodle::params {
 
-  $tarball_url        = 'http://download.wikimedia.org/mediawiki/1.19/mediawiki-1.19.1.tar.gz'
   $conf_dir           = '/etc/mediawiki'
   $apache_daemon      = '/usr/sbin/apache2'
   $use_package        = false
-  $db_host            = 'localhost'
+  $db_host            = 'moodle-test-rds.c9l3aoximsas.ap-southeast-2.rds.amazonaws.com'
   $db_name            = 'moodle'
   $db_user            = 'moodle'
-  $db_password        = 'moodle'
-  $site_url           = 'moodle.scuole-dev.cloudlabcsi.eu'
+  $db_password        = 'moodle!2'
+  #$site_url           = 'moodle.cloudoman.com'
+  $site_url           = 'localhost/moodle'
   $admin_user         = 'admin'
   $admin_password     = '1!admin0'
   $site_name          = 'Site Name'
@@ -68,7 +68,7 @@ class moodle::params {
                          'wiki.phtml']
   
   case $::operatingsystem {
-    redhat, centos:  {
+    redhat, centos, amazon:  {
       $web_dir            = '/var/www/html'
       $doc_root           = "${web_dir}/wikis"
       $packages           = ['php-gd', 'php-mysql', 'wget']
