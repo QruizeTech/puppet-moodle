@@ -8,27 +8,26 @@ The usage is:
 
 # These are the requirements you have to place in the node you want to install
 			package { mysql:
-  ensure => present;
- }
+                            ensure => present;
+                             }
 
-Package { ensure => "installed" }
-package { "httpd": }
-package { "php":   }
+		Package { ensure => "installed" }
+		package { "httpd": }
+		package { "php":   }
+		package { "php-mysql":   }
+		package { "php-mbstring": }
+		package { "php-xml":   }
+		package { "php-xmlrpc": }
+		package { "php-soap": }
+		package { "php-gd": }
+		package { "php-intl": }
 
-package { "php-mysql":   }
-package { "php-mbstring": }
-package { "php-xml":   }
-package { "php-xmlrpc": }
-package { "php-soap": }
-package { "php-gd": }
-package { "php-intl": }
 
+		package { zip:
+   			ensure => present;
+  		 }
 
-package { zip:
-   ensure => present;
-  }
-
-# comes the proper Moodel class
+	# comes the proper Moodel class
 			class { 'moodle':
 			  tarball_url => 'http://sourceforge.net/projects/moodle/files/Moodle/stable23/moodle-2.3.3.tgz',
 			  $db_host => 'localhost',
