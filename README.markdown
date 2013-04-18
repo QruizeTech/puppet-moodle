@@ -7,10 +7,7 @@ The approach is to let each module to manage it's own stuff so it depends on som
 The usage is:
 
 # These are the requirements you have to place in the node you want to install
-			package { mysql:
-                            ensure => present;
-                             }
-
+		package { mysql: ensure => present; }
 		Package { ensure => "installed" }
 		package { "httpd": }
 		package { "php":   }
@@ -21,11 +18,7 @@ The usage is:
 		package { "php-soap": }
 		package { "php-gd": }
 		package { "php-intl": }
-
-
-		package { zip:
-   			ensure => present;
-  		 }
+		package { zip: ensure => present; }
 
 	# comes the proper Moodel class
 			class { 'moodle':
